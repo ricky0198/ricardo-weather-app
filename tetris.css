@@ -9,11 +9,131 @@
   text-align: center;
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   background: linear-gradient(135deg, var(--accent), #a78bfa);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ── Mode Selector ── */
+.mode-selector {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.mode-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+/* ── Online Panel ── */
+.online-panel {
+  max-width: 400px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+.connect-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+
+.or-divider {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.join-row {
+  display: flex;
+  gap: 8px;
+}
+
+.join-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.join-row input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.connection-status {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.connection-status.waiting {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+}
+
+.connection-status.connected {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: #34d399;
+}
+
+.connection-status.error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+}
+
+.room-code-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 8px 0;
+  font-family: monospace;
+  user-select: all;
 }
 
 .game-controls-bar {

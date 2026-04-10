@@ -103,6 +103,27 @@
     <!-- Tetris Game (outside main so it's always visible) -->
     <section class="game-section">
       <h2>🎮 Two-Player Tetris</h2>
+
+      <!-- Mode Selector -->
+      <div class="mode-selector">
+        <button class="mode-btn active" id="mode-local">🎮 Local</button>
+        <button class="mode-btn" id="mode-online">🌐 Online</button>
+      </div>
+
+      <!-- Online Connection Panel -->
+      <div id="online-panel" class="online-panel hidden">
+        <div class="connect-box">
+          <button class="game-btn" id="btn-host">Host Game</button>
+          <div class="or-divider">or</div>
+          <div class="join-row">
+            <input type="text" id="room-code-input" placeholder="Enter room code" maxlength="8" />
+            <button class="game-btn" id="btn-join">Join</button>
+          </div>
+        </div>
+        <div id="connection-status" class="connection-status hidden"></div>
+      </div>
+
+      <!-- Game Controls -->
       <div class="game-controls-bar">
         <button class="game-btn" id="btn-start">Start</button>
         <button class="game-btn" id="btn-pause">Pause</button>
@@ -110,9 +131,9 @@
       </div>
 
       <div class="game-arena">
-        <!-- Player 1 -->
+        <!-- Player 1 / You -->
         <div class="player-panel p1">
-          <div class="player-header"><h3>Player 1</h3></div>
+          <div class="player-header"><h3 id="p1-label">Player 1</h3></div>
           <div class="player-stats">
             <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p1">0</div></div>
             <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p1">0</div></div>
@@ -128,15 +149,15 @@
               <canvas class="next-canvas" id="next-p1"></canvas>
             </div>
           </div>
-          <div class="player-controls-info">
+          <div class="player-controls-info" id="p1-controls">
             <kbd>A</kbd> <kbd>D</kbd> Move &nbsp; <kbd>S</kbd> Down<br/>
             <kbd>W</kbd> Rotate &nbsp; <kbd>Q</kbd> Drop
           </div>
         </div>
 
-        <!-- Player 2 -->
+        <!-- Player 2 / Opponent -->
         <div class="player-panel p2">
-          <div class="player-header"><h3>Player 2</h3></div>
+          <div class="player-header"><h3 id="p2-label">Player 2</h3></div>
           <div class="player-stats">
             <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p2">0</div></div>
             <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p2">0</div></div>
@@ -152,7 +173,7 @@
               <canvas class="next-canvas" id="next-p2"></canvas>
             </div>
           </div>
-          <div class="player-controls-info">
+          <div class="player-controls-info" id="p2-controls">
             <kbd>←</kbd> <kbd>→</kbd> Move &nbsp; <kbd>↓</kbd> Down<br/>
             <kbd>↑</kbd> Rotate &nbsp; <kbd>/</kbd> Drop
           </div>
@@ -163,7 +184,8 @@
     </section>
   </div>
 
-  <script src="app.js?v=2"></script>
-  <script src="tetris.js?v=2"></script>
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="app.js?v=3"></script>
+  <script src="tetris.js?v=3"></script>
 </body>
 </html>
