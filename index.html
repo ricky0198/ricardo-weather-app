@@ -85,68 +85,6 @@
         </div>
       </section>
 
-      <!-- Tetris Game -->
-      <section class="game-section">
-        <h2>🎮 Two-Player Tetris</h2>
-        <div class="game-controls-bar">
-          <button class="game-btn" id="btn-start">Start</button>
-          <button class="game-btn" id="btn-pause">Pause</button>
-          <button class="game-btn" id="btn-reset">Reset</button>
-        </div>
-
-        <div class="game-arena">
-          <!-- Player 1 -->
-          <div class="player-panel p1">
-            <div class="player-header"><h3>Player 1</h3></div>
-            <div class="player-stats">
-              <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p1">0</div></div>
-              <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p1">0</div></div>
-              <div class="stat-box"><div class="stat-label">Level</div><div class="stat-value" id="level-p1">1</div></div>
-            </div>
-            <div class="game-canvas-wrapper">
-              <div class="canvas-container">
-                <canvas class="game-canvas" id="board-p1"></canvas>
-                <div class="game-over-overlay" style="display:none"><span>Game Over</span></div>
-              </div>
-              <div class="next-piece-wrapper">
-                <div class="next-label">Next</div>
-                <canvas class="next-canvas" id="next-p1"></canvas>
-              </div>
-            </div>
-            <div class="player-controls-info">
-              <kbd>A</kbd> <kbd>D</kbd> Move &nbsp; <kbd>S</kbd> Down<br/>
-              <kbd>W</kbd> Rotate &nbsp; <kbd>Q</kbd> Drop
-            </div>
-          </div>
-
-          <!-- Player 2 -->
-          <div class="player-panel p2">
-            <div class="player-header"><h3>Player 2</h3></div>
-            <div class="player-stats">
-              <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p2">0</div></div>
-              <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p2">0</div></div>
-              <div class="stat-box"><div class="stat-label">Level</div><div class="stat-value" id="level-p2">1</div></div>
-            </div>
-            <div class="game-canvas-wrapper">
-              <div class="canvas-container">
-                <canvas class="game-canvas" id="board-p2"></canvas>
-                <div class="game-over-overlay" style="display:none"><span>Game Over</span></div>
-              </div>
-              <div class="next-piece-wrapper">
-                <div class="next-label">Next</div>
-                <canvas class="next-canvas" id="next-p2"></canvas>
-              </div>
-            </div>
-            <div class="player-controls-info">
-              <kbd>←</kbd> <kbd>→</kbd> Move &nbsp; <kbd>↓</kbd> Down<br/>
-              <kbd>↑</kbd> Rotate &nbsp; <kbd>/</kbd> Drop
-            </div>
-          </div>
-        </div>
-
-        <div class="winner-banner" id="winner-banner"></div>
-      </section>
-
       <!-- Hourly Forecast -->
       <section class="forecast-section" aria-label="Hourly forecast">
         <h2>Hourly Forecast</h2>
@@ -161,6 +99,68 @@
         <div id="daily-container" class="daily-container"></div>
       </section>
     </main>
+
+    <!-- Tetris Game (outside main so it's always visible) -->
+    <section class="game-section">
+      <h2>🎮 Two-Player Tetris</h2>
+      <div class="game-controls-bar">
+        <button class="game-btn" id="btn-start">Start</button>
+        <button class="game-btn" id="btn-pause">Pause</button>
+        <button class="game-btn" id="btn-reset">Reset</button>
+      </div>
+
+      <div class="game-arena">
+        <!-- Player 1 -->
+        <div class="player-panel p1">
+          <div class="player-header"><h3>Player 1</h3></div>
+          <div class="player-stats">
+            <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p1">0</div></div>
+            <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p1">0</div></div>
+            <div class="stat-box"><div class="stat-label">Level</div><div class="stat-value" id="level-p1">1</div></div>
+          </div>
+          <div class="game-canvas-wrapper">
+            <div class="canvas-container">
+              <canvas class="game-canvas" id="board-p1"></canvas>
+              <div class="game-over-overlay" style="display:none"><span>Game Over</span></div>
+            </div>
+            <div class="next-piece-wrapper">
+              <div class="next-label">Next</div>
+              <canvas class="next-canvas" id="next-p1"></canvas>
+            </div>
+          </div>
+          <div class="player-controls-info">
+            <kbd>A</kbd> <kbd>D</kbd> Move &nbsp; <kbd>S</kbd> Down<br/>
+            <kbd>W</kbd> Rotate &nbsp; <kbd>Q</kbd> Drop
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="player-panel p2">
+          <div class="player-header"><h3>Player 2</h3></div>
+          <div class="player-stats">
+            <div class="stat-box"><div class="stat-label">Score</div><div class="stat-value" id="score-p2">0</div></div>
+            <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="lines-p2">0</div></div>
+            <div class="stat-box"><div class="stat-label">Level</div><div class="stat-value" id="level-p2">1</div></div>
+          </div>
+          <div class="game-canvas-wrapper">
+            <div class="canvas-container">
+              <canvas class="game-canvas" id="board-p2"></canvas>
+              <div class="game-over-overlay" style="display:none"><span>Game Over</span></div>
+            </div>
+            <div class="next-piece-wrapper">
+              <div class="next-label">Next</div>
+              <canvas class="next-canvas" id="next-p2"></canvas>
+            </div>
+          </div>
+          <div class="player-controls-info">
+            <kbd>←</kbd> <kbd>→</kbd> Move &nbsp; <kbd>↓</kbd> Down<br/>
+            <kbd>↑</kbd> Rotate &nbsp; <kbd>/</kbd> Drop
+          </div>
+        </div>
+      </div>
+
+      <div class="winner-banner" id="winner-banner"></div>
+    </section>
   </div>
 
   <script src="app.js"></script>
