@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>&#9925; Weather Forecast</h1>
+      <form id="search-form" autocomplete="off">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Search for a city..."
+            aria-label="Search for a city"
+          />
+          <button type="submit" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+          </button>
+          <ul id="suggestions" class="suggestions hidden" role="listbox"></ul>
+        </div>
+        <button type="button" id="locate-btn" aria-label="Use my location" title="Use my location">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+          </svg>
+        </button>
+      </form>
+    </header>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <p id="error-message"></p>
+    </div>
+
+    <main id="weather-content" class="hidden">
+      <!-- Current Weather -->
+      <section class="current-weather" aria-label="Current weather">
+        <div class="current-main">
+          <div class="current-icon" id="current-icon"></div>
+          <div class="current-temp">
+            <span id="current-temp-value">--</span>
+            <span class="degree">°F</span>
+          </div>
+          <div class="current-desc" id="current-desc">--</div>
+          <div class="current-location" id="current-location">--</div>
+        </div>
+        <div class="current-details">
+          <div class="detail">
+            <span class="detail-label">Feels Like</span>
+            <span class="detail-value" id="feels-like">--°</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Humidity</span>
+            <span class="detail-value" id="humidity">--%</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Wind</span>
+            <span class="detail-value" id="wind">-- mph</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">UV Index</span>
+            <span class="detail-value" id="uv-index">--</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Visibility</span>
+            <span class="detail-value" id="visibility">-- mi</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Pressure</span>
+            <span class="detail-value" id="pressure">-- hPa</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hourly Forecast -->
+      <section class="forecast-section" aria-label="Hourly forecast">
+        <h2>Hourly Forecast</h2>
+        <div class="hourly-scroll">
+          <div id="hourly-container" class="hourly-container"></div>
+        </div>
+      </section>
+
+      <!-- 7-Day Forecast -->
+      <section class="forecast-section" aria-label="7-day forecast">
+        <h2>7-Day Forecast</h2>
+        <div id="daily-container" class="daily-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
